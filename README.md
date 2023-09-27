@@ -23,6 +23,13 @@ where  Date(payment_date) between '2005-06-15' and '2005-06-18'
 ## Задание 3
 Получите последние пять аренд фильмов.
 
+```sql
+select *
+from sakila.rental
+order by rental_date desc
+limit 5;
+```
+
 ## Задание 4
 Одним запросом получите активных покупателей, имена которых Kelly или Willie.
 
