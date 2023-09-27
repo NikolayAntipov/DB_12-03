@@ -14,7 +14,7 @@ and position(' ' in district) = 0;
 Получите из таблицы платежей за прокат фильмов информацию по платежам, которые выполнялись в промежуток с 15 июня 2005 года по 18 июня 2005 года включительно и стоимость которых превышает 10.00.
 
 ```sql
-select  *
+select  amount, payment_date
 from  sakila.payment
 where  Date(payment_date) between '2005-06-15' and '2005-06-18'
 and amount > 10.0;
@@ -37,3 +37,9 @@ limit 5;
 
 все буквы в фамилии и имени из верхнего регистра переведите в нижний регистр,
 замените буквы 'll' в именах на 'pp'.
+
+```sql
+select replace(lower(first_name), 'll', 'pp'), lower(last_name), active
+from sakila.customer
+where first_name in ('Kelly', 'Willie') and active = 1;
+```
